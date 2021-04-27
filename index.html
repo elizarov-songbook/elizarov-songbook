@@ -6,7 +6,6 @@
     const el = document.createElement('pwa-update');
     document.body.appendChild(el);
 </script>
-
 <head>
     <!-- Required meta tags -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -19,31 +18,28 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel='manifest' href='/manifest.json'>
     <title>Елизаров</title>
-
     <style>
         body {
-            overscroll-behavior-y: contain;
+            overscroll-behavior-y: contain; /* deny to refresh while scroll down*/
+            /* overflow: hidden; /* Hide scrollbars */
         }
 
         .caution-container {
+            padding-left: calc(100vw - 100%);
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
-
+    
         .caution-circle {
-            position: relative;
             margin: 15px 0px 0px 65px;
-            /*position: absolute;*/
-            /*left: 50%;*/
             width: 80px;
             height: 80px;
             border-radius: 80px;
             border: 2px solid gainsboro;
         }
-
+    
         .caution-circle-text {
             position: absolute;
             top: 50%;
@@ -52,7 +48,7 @@
             color: gainsboro;
             font-size: xx-large;
         }
-
+    
         .caution-lb-text {
             text-align: center;
             margin-top: 5px;
@@ -60,21 +56,21 @@
             color: gainsboro;
             white-space: normal;
         }
-
+    
         .about-text {
             margin: 5px 5px 5px 5px;
             text-align: left;
             white-space: normal;
             text-indent: 1em;
         }
-
+    
         .system-text {
             margin: 5px 5px 5px 5px;
             text-align: left;
             white-space: normal;
             font-size: x-small;
         }
-
+    
         .boxShadow {
             width: 90%;
             max-width: 550px;
@@ -82,49 +78,45 @@
             padding: 1em;
             box-shadow: 1px 1px 1px 1px #575555 inset;
         }
-
+    
         @media screen and (max-width: 1080px) {
-
+    
             .modal-dialog {
                 /*margin:  0px 0px 0px 0px;*/
                 margin: 0 auto;
                 width: 100%;
                 /* New width for default modal */
-
             }
-
+    
             .modal-sm {
                 margin: 0px 0px 0px 0px;
                 width: 350px;
                 /* New width for small modal */
-
             }
-
+    
             /* сверху | справа | снизу | слева */
             .modal-lg {
                 /* margin:  0px 0px 0px 0px;*/
                 max-width: 95%;
                 width: 100%;
                 /* New width for large modal */
-
             }
-
+    
             .modal-title {
                 width: 100%;
                 border: none;
                 font-size: x-small;
                 font-size: 4vw;
                 font-weight: bold;
-
             }
-
+    
             table.song {
                 width: 100%;
                 border: none;
                 font-size: x-small;
                 font-size: 2.3vw;
             }
-
+    
             table.tab {
                 width: fit-content;
                 /* задаем ширину таблицы с табами по содержимому */
@@ -132,14 +124,13 @@
                 font-size: x-small;
                 font-size: 2.7vw;
             }
-
+    
             p.comment-text {
                 font-size: x-small;
                 font-size: 2.7vw;
-
             }
         }
-
+    
         tr td:first-child {
             border: none;
             padding: 0px 5px 0px 5px;
@@ -148,7 +139,7 @@
             vertical-align: top;
             width: auto !important;
         }
-
+    
         tr td:last-child {
             border-left: 1px solid Gainsboro;
             padding: 0px 5px 0px 5px;
@@ -156,7 +147,7 @@
             vertical-align: top;
             width: auto !important;
         }
-
+    
         td:not(:last-child) {
             border-left: 1px solid Gainsboro;
             padding: 0px 0px 0px 5px;
@@ -164,37 +155,51 @@
             text-align: left;
             vertical-align: top;
         }
-
+    
         .caution {
             margin: 5px 0 0 5px;
         }
-
+    
         .ddm {
             margin: 0px 0px 2px 2px;
         }
-
+    
         p.comment-text {
             width: 100%;
             text-align: left;
             padding: 5px 0px 0px 10px;
         }
-
+    
         p.hist {
             margin-top: 10px;
         }
-
+    
         .dropdown-divider {
             padding: 0px;
             margin: 0px;
         }
-
+    
         .m {
             padding-top: 2px;
         }
+
     </style>
 </head>
 <body>
-    <ul class="nav nav-pills m">
+    <div class="caution-container">
+        <div class="row caution">
+            <div class="col-md-auto caution-circle">
+                <p class="caution-circle-text">18+</p>
+            </div>
+        </div>
+        <div class="row caution">
+            <div class="col-md-auto">
+                <p class="caution-lb-text">СОДЕРЖИТ<br>НЕЦЕНЗУРНУЮ<br>БРАНЬ</p>
+            </div>
+        </div>
+    </div>
+    
+    <ul class="nav nav-pills m"> 
         <li class="nav-item dropdown ddm">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -310,19 +315,6 @@
         </li>
     </ul>
 
-    <div class="caution-container">
-        <div class="row caution">
-            <div class="col-md-auto caution-circle">
-                <p class="caution-circle-text">18+</p>
-            </div>
-        </div>
-        <div class="row caution">
-            <div class="col-md-auto">
-                <p class="caution-lb-text">СОДЕРЖИТ<br>НЕЦЕНЗУРНУЮ<br>БРАНЬ</p>
-            </div>
-        </div>
-
-    </div>
 
     <div class="modal fade mw89" tabindex="88" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -427,7 +419,7 @@
                         <td>Моя страна была украдена,</td>
                     </tr>
                     <tr>
-                        <td>E A F#7</td>
+                        <td>A F#7</td>
                         <td>Нет ничего… Но вы гуляйте,</td>
                     </tr>
                     <tr>
@@ -485,9 +477,9 @@
                 <p class="comment-text">
                     *Вступление играется следующим образом: <br>
                     |D |DM7 |G |D |<br>
-                    e|14-14-14-14|14---|7-7-7-7|2---|<br>
-                    b|15-15-15-15|14---|8-8-8-8|3---|<br>
-                    g|14-14-14-14|14---|7-7-7-7|2---|<br>
+                    e|14-14-14-14|14-14-14-14|7-7-7-7|2---|<br>
+                    b|15-15-15-15|14-14-14-14|8-8-8-8|3---|<br>
+                    g|14-14-14-14|14-14-14-14|7-7-7-7|2---|<br>
                     <br>Аппликатуры:
                     <br>GM7/F# (300022)
                     <br>F#m (222442)
@@ -10729,5 +10721,4 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
-
 </html>
